@@ -10,7 +10,7 @@ public class SubstringDivisibility
     long counter = 1234567890L;
 
     while (counter <= 9876543210L) {
-      if (check0to9Pandigital(Long.toString(counter))) {
+      if (checkAnyPandigital(Long.toString(counter))) {
         if (checkSubStringDiv(Long.toString(counter))) {
           answer += counter;
         }
@@ -26,7 +26,7 @@ public class SubstringDivisibility
 
   public void testCheckPan(Long n) {
     System.out.printf("%d is a Pandigital: %b\n", n,
-      check0to9Pandigital(Long.toString(n)));
+      checkAnyPandigital(Long.toString(n)));
   }
 
   public void testCheckSubString(Long n) {
@@ -62,15 +62,6 @@ public class SubstringDivisibility
         }
         tempChar = c;
       }
-    return true;
-  }
-
-  private boolean check0to9Pandigital(String checkNum) {
-    for (int i = 0; i < 10; i++) {
-      if (checkNum.contains(Integer.toString(i)) == false) {
-        return false;
-      }
-    }
     return true;
   }
 
